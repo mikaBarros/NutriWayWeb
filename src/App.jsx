@@ -1,0 +1,3 @@
+import { Routes,Route,Navigate } from 'react-router-dom';
+import Login from './pages/Login'; import Dashboard from './pages/Dashboard'; import PatientProfile from './pages/PatientProfile'; import MealPlan from './pages/MealPlan'; import Agenda from './pages/Agenda'; import ProfessionalProfile from './pages/ProfessionalProfile';
+export default function App(){return <Routes><Route path="/" element={<Login/>}/><Route path="/dashboard" element={<Dashboard/>}/><Route path="/paciente/:id" element={<PatientProfile/>}/><Route path="/paciente/:id/plano" element={<MealPlan/>}/><Route path="/agenda" element={<Agenda/>}/><Route path="/perfil-profissional" element={<ProfessionalProfile/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes>}
