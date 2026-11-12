@@ -1,0 +1,28 @@
+.back-row { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.back-row button { background: transparent; border: 0; color: var(--texto); cursor: pointer; padding: 4px; display: flex; }
+.back-row h1 { margin: 0; font-size: 22px; font-weight: 500; }
+
+.profile-card { display: flex; align-items: center; gap: 14px; border: 1px solid #b9ad97; border-radius: 18px; padding: 14px; margin-bottom: 16px; }
+.profile-card .patient-avatar { width: 64px; height: 64px; }
+.profile-card strong { display: block; font-size: 17px; font-weight: 500; }
+.birth { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-top: 4px; }
+
+.tabs { display: flex; gap: 8px; border-bottom: 1px solid #b9ad97; margin-bottom: 14px; }
+.tabs button { display: flex; align-items: center; gap: 6px; background: transparent; border: 1px solid #b9ad97; border-bottom: 0; border-radius: 8px 8px 0 0; padding: 8px 12px; font-size: 14px; color: var(--texto); cursor: pointer; }
+.tabs button.active { border-color: var(--verde-escuro); color: var(--verde-escuro); font-weight: 600; }
+
+.pills { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 16px; }
+.pill { background: var(--verde); color: #fff; border: 0; border-radius: 14px; padding: 7px 16px; font-size: 13px; cursor: pointer; }
+.pill.off { opacity: .6; }
+
+.form-block { margin-bottom: 22px; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.field label { font-size: 13px; color: var(--verde-escuro); }
+.field input, .field select, .field textarea { border: 1px solid #b9ad97; border-radius: 8px; background: transparent; padding: 9px 10px; font-size: 14px; color: var(--texto); font-family: inherit; }
+.field textarea { resize: vertical; min-height: 56px; }
+
+.row-btns { display: flex; gap: 12px; }
+.row-btns button { flex: 1; background: var(--verde); color: #fff; border: 0; border-radius: 12px; padding: 10px; font-size: 14px; cursor: pointer; opacity: .6; }
+.row-btns button.sel { opacity: 1; font-weight: 600; }
+
+.save { width: 100%; background: var(--verde-escuro); color: #fff; border: 0; border-radius: 14px; padding: 12px; font-size: 15px; cursor: pointer; }
