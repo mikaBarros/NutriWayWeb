@@ -1,0 +1,38 @@
+/* Cores tiradas da tela "Perfil do Paciente" */
+:root {
+  --bege: #e8dcc8;
+  --verde: #8fa683;
+  --verde-escuro: #5f7d3f;
+  --texto: #4a4a42;
+}
+
+.page { padding: 16px 16px 100px; color: var(--texto); }
+
+.section-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.section-title small { color: var(--verde-escuro); font-size: 13px; }
+.section-title h2 { margin: 0; font-size: 26px; font-weight: 400; }
+
+.primary-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--verde); color: #fff; border: 0;
+  padding: 8px 14px; border-radius: 12px; font-size: 14px; cursor: pointer;
+}
+
+.search-box {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #b9ad97; border-radius: 12px;
+  padding: 10px 12px; margin-bottom: 16px; color: var(--verde-escuro);
+}
+.search-box input { flex: 1; border: 0; background: transparent; outline: none; font-size: 15px; color: var(--texto); }
+
+.patient-list { display: flex; flex-direction: column; gap: 12px; }
+
+.patient-card {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  background: transparent; border: 1px solid #b9ad97; border-radius: 18px;
+  padding: 12px 14px; font-size: 16px; color: var(--texto); text-align: left; cursor: pointer;
+}
+.patient-card:focus-visible, .primary-btn:focus-visible { outline: 2px solid var(--verde-escuro); outline-offset: 2px; }
+.patient-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+
+.empty { text-align: center; color: var(--verde-escuro); margin-top: 24px; }
