@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import type { PatientSummary } from '../data/mock';
+import type { PatientSummary } from '../services/types';
 
 interface PatientCardProps {
   patient: PatientSummary;

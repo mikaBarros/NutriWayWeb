@@ -175,6 +175,7 @@ after insert on auth.users
 for each row execute function public.create_profile_for_new_user();
 
 revoke all on function public.create_profile_for_new_user() from public, anon, authenticated;
+grant execute on function public.create_profile_for_new_user() to supabase_auth_admin;
 
 alter table public.profiles enable row level security;
 alter table public.patients enable row level security;

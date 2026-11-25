@@ -1,10 +1,12 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Home, Users, CalendarDays, UserRound, LogOut } from 'lucide-react';
+import { getProfile, logout } from '../services/api';
 import pfp from '@/images/pfp.jpeg';
+
 interface LayoutProps {
   children: ReactNode;
 }
@@ -19,6 +21,29 @@ const navItems = [
 const Layout = ({ children }: LayoutProps) => {
   const router = useRouter();
   const pathname = usePathname();
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      try {
+        const profile = await getProfile();
+        if (active && profile?.fullName) setName(profile.fullName);
+      } catch {
+        // Mantém o cabeçalho sem nome caso o perfil ainda não esteja disponível.
+      }
+    };
+    void load();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleLogout = async () => {
+    await logout();
+    router.replace('/');
+    router.refresh();
+  };
 
   return (
     <div className="app-shell">
@@ -28,9 +53,9 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="avatar small">
             <img src={pfp.src} alt="" />
           </div>
-          <div><strong>Olá,</strong><span>Rayanne Soares Ribeiro</span></div>
+          <div><strong>Olá,</strong><span>{name || 'Profissional'}</span></div>
         </div>
-        <button className="logout" onClick={() => router.push('/')} title="Sair" type="button"><LogOut size={19}/></button>
+        <button className="logout" onClick={handleLogout} title="Sair" type="button"><LogOut size={19}/></button>
       </header>
       <main>{children}</main>
       <nav className="bottom-nav">
